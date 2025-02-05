@@ -1,0 +1,27 @@
+{
+  "name": "form-to-backend-demo",
+  "version": "1.0.0",
+  "description": "\"En enkel demo for å vise hvordan en node/express app kan flytte data fra frontend til backend\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faberxmir/form-to-backend-demo.git"
+  },
+  "keywords": [
+    "forms",
+    "node",
+    "express",
+    "javascript",
+    "bodyparser",
+    "json"
+  ],
+  "author": "Geir Hilmersen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faberxmir/form-to-backend-demo/issues"
+  },
+  "homepage": "https://github.com/faberxmir/form-to-backend-demo#readme"
+}
