@@ -1,0 +1,15 @@
+<%-include('./partials/head.ejs') %>
+<%-include('./partials/navbar.ejs') %>
+
+<% if(typeof users !== 'undefined' && Array.isArray(users)) { %>
+    <section id="users" class="list">
+        <% for(user of users) { %>
+            <h1><%=user.name%> <%=user.surname%></h1>
+            <hr>
+        <% } %>
+    </section>
+<% } else { %>
+    <h1>No usable data!</h1>
+<% } %>
+
+<%-include('./partials/foot.ejs') %>

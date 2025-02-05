@@ -1,0 +1,18 @@
+<%-include('./partials/head.ejs') %>
+<%-include('./partials/navbar.ejs') %>
+<section class="datainput">
+    <h1>Data input form:</h1>
+    <p>The data in this form is sent to the backend</p>
+    <form method="post" action="/parse-this-data-to-mongo">
+        <div class="label-input">
+            <label for="navn">Navn:</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div class="label-input">
+            <label for="etternavn">Etternavn:</label>
+            <input type="text" name="surname" id="surname">
+        </div>
+        <button type="submit">Make mongodata!</button>
+    </form>
+</section>
+<%-include('./partials/foot.ejs') %>
