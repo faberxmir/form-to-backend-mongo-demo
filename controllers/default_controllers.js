@@ -16,7 +16,7 @@ const showMongoData = async (req,res,next)=>{
         res.status(200).render('Users', {users});
     } catch(error){
         //If failure return json that notifies about the error.
-        res.status(500).json({message:error.message});
+        res.status(500).render('Users', {feedback: error.message});
     }
 }
 
@@ -32,7 +32,11 @@ const parseFrontendToMongo = async (req, res, next)=>{
         res.status(200).redirect('/showmongodata');
     } catch(error){
         //If failure return json that notifies about the error.
-        res.status(500).json({message:error.message});
+        if(error?.code === 11000){
+            res.status(409).render('index', {feedback: 'Your surname must be unique!'});
+        } else {
+            res.status(500).render('index', {feedback: error.message});
+        }
     }
 }
 

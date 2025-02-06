@@ -71,3 +71,12 @@ body {
     padding: 10px 2ch;
     width: 35ch;
 }
+
+#feedbackfield {
+    font-style: italic;
+    max-width: 35ch;
+}
+
+.invisible {
+    visibility: hidden;
+}
