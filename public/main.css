@@ -1,6 +1,30 @@
 nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    background-color: #333333;
+    color: whitesmoke;
+    padding: 0 2ch;
+    margin-bottom: 25px;
+}
+
+nav a {
+    color: whitesmoke;
+}
+
+nav .menu ul{
+    display: flex;
+    list-style-type: none;
+    padding: 0ch 15px;
+}
+
+nav .menu li {
+    padding: 0 1rem;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
 }
 
 .datainput {
@@ -9,7 +33,6 @@ nav {
     background-color: #030f29;
     border: 3px solid #333333;
     flex-direction: column;
-    font-family: Arial, Helvetica, sans-serif;
     justify-content: center;
     align-items: center;
     margin: 2rem auto;
@@ -36,4 +59,15 @@ nav {
     height: 40px;
     margin-top: 20px;
     width: 50%;
+}
+
+#users {
+    color: whitesmoke;
+    background-color:#030f29;
+    margin: 0 auto;
+    text-align: center;
+}
+.list {
+    padding: 10px 2ch;
+    width: 35ch;
 }
