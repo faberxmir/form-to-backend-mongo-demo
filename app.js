@@ -7,15 +7,25 @@ const mongoose = require('mongoose');
 //local modules
 const default_routes = require('./routes/default_routes');
 
+//Module scoped variables
 const PORT = process.env.PORT || 3000;
 const DBSTRING = process.env.DBSTRING || "mongodb://127.0.0.1"
 
+//Set what view engine to use..
 app.set('view engine', 'ejs');
+
+//Instruct express to use a folder, public, at root level
+//to serve static files
 app.use(express.static('public'));
 
+//Encodes the url so we can access it through a request object
+//in our controller methods
 app.use(express.urlencoded({extended:true}));
+
+//Attach the routes we imported from our router to the app
 app.use(default_routes);
 
+//Start the express app.
 app.listen(PORT, initApp);
 
 

@@ -1,28 +1,37 @@
 const User = require('../models/User');
 
+//This is the simplest possible controller, rendering the index page only.
 const index = (req, res, next)=>{
     res.render('index');
 }
 
+//This controller retrieves data found from all users and renders a page, Users, 
+//if it finds data. Returns json with a message if anything fails.
 const showMongoData = async (req,res,next)=>{
     try {
+        //By using no search parameters in the find method, all users in the 
+        //collection will be returned
         const users = await User.find({});
-        console.log(users);
+        //renders "Users", showing all users.
         res.status(200).render('Users', {users});
     } catch(error){
-        console.log('error was caught!', error);
+        //If failure return json that notifies about the error.
         res.status(500).json({message:error.message});
     }
 }
 
+
+//This controller takes data, name/surname, from the request body. We can do this 
+//because it is URL-encoded in "app.js", else it would be more complicated. 
 const parseFrontendToMongo = async (req, res, next)=>{
     const {name,surname}= req.body;
-    console.log(name, surname);
     try {
+        // uses name/surname and creates an entry in the database
         await User.create({name,surname});
+        //If success redirects the request to the route shown.
         res.status(200).redirect('/showmongodata');
     } catch(error){
-        console.log('error was caught!', error);
+        //If failure return json that notifies about the error.
         res.status(500).json({message:error.message});
     }
 }
